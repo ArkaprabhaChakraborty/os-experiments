@@ -3,7 +3,6 @@ org 0x7c00
 
 start: jmp loader
 
-TIMES 08h - $ + start DB 0
 
 ;*************************************************
 ;      		OEM parameter block
@@ -28,7 +27,14 @@ bsSerialNumber:	        DD 0xa0a1a2a3
 bsVolumeLabel: 	        DB "YOUR OWN OS"
 bsFileSystem: 	        DB "FAT12   "
 
+;*************************************************
+;		DISPLAY MESSAGE
+;*************************************************
+
+
 msg db "Hello and welcome to my OS! :) (Or rather bootloader)", 0
+
+
 
 ;**************************************************
 ;		BootLoader Entry Point
